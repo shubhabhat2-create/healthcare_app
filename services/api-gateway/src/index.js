@@ -8,4 +8,4 @@ app.post('/api/orders',async(req,res)=>proxy(`${ORDER}/api/orders`,res,{method:'
 app.post('/api/auth/login',async(req,res)=>proxy(`${AUTH}/api/auth/login`,res,{method:'POST',body:req.body}));
 async function proxy(url,res,options={}){try{const r=await fetch(url,{method:options.method||'GET',headers:{'content-type':'application/json'},body:options.body?JSON.stringify(options.body):undefined});const text=await r.text();res.status(r.status).type('json').send(text);}catch(e){res.status(502).json({message:'Upstream service unavailable'});}}
 app.listen(4000,()=>console.log('api-gateway listening on :4000'));
-//Testing this -1.0
+//Testing this -2.0
