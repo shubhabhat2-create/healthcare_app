@@ -1,0 +1,1 @@
+{"name":"carenest-healthcare-store","private":true,"scripts":{"install:all":"npm --prefix frontend install && npm --prefix services/api-gateway install && npm --prefix services/product-service install && npm --prefix services/order-service install && npm --prefix services/auth-service install"}}
